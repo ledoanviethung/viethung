@@ -5,13 +5,13 @@ create table marks(
 	student_code int primary key,
     student_name varchar(50) not null,
     course int,
+    foreign key (course) references course(code),
     semester1marks smallint,
     semester2marks smallint,
     enrolled_date date,
     check (semester1marks >= 0 and semester1marks <= 100),
     check (semester2marks >= 0 and semester2marks <= 100),
-    check (enrolled_date < "2021-08-16"),
-    foreign key (course) references course(code)
+    check (enrolled_date < getdate())
 );
 create table course(
 	code int primary key,
