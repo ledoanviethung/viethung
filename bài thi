@@ -4,7 +4,7 @@ use bai_thi;
 create table marks(
 	student_code int primary key,
     student_name varchar(50) not null,
-    course varchar(10),
+    course int,
     semester1marks smallint,
     semester2marks smallint,
     enrolled_date date,
@@ -20,17 +20,17 @@ create table course(
     check (LENGTH(course_title) > 10)
 );
 
-INSERT INTO course VALUES("1","Khoa hoc 1","20");
-INSERT INTO course VALUES("2","Khoa hoc 2","24");
-INSERT INTO course VALUES("3","Khoa hoc 3","25");
-INSERT INTO course VALUES("4","Khoa hoc 4","55");
-INSERT INTO course VALUES("5","Khoa hoc 5","66");
+INSERT INTO course VALUES("1","Khoa hoc 1","24");
+INSERT INTO course VALUES("2","Khoa hoc 2","60");
+INSERT INTO course VALUES("3","Khoa hoc 3","100");
+INSERT INTO course VALUES("4","Khoa hoc 4","800");
+INSERT INTO course VALUES("5","Khoa hoc 5","1000");
 
-INSERT INTO marks VALUES("1","Hoc sinh A","1","10","10","2020-08-05");
-INSERT INTO marks VALUES("2","Hoc sinh B","2","9","8","2021-07-05");
-INSERT INTO marks VALUES("3","Hoc sinh C","3","7","7","2020-06-05");
-INSERT INTO marks VALUES("4","Hoc sinh D","4","8","8","2020-05-04");
-INSERT INTO marks VALUES("5","Hoc sinh E","5","9","8","2020-04-05");
+INSERT INTO marks VALUES("1","Hoc sinh A","1","10","10","2021-08-22");
+INSERT INTO marks VALUES("2","Hoc sinh B","2","9","8","2020-08-14");
+INSERT INTO marks VALUES("3","Hoc sinh C","3","7","7","2020-07-13");
+INSERT INTO marks VALUES("4","Hoc sinh D","4","8","8","2020-03-25");
+INSERT INTO marks VALUES("5","Hoc sinh E","5","9","8","2020-02-15");
 
 create view show_student
 as
