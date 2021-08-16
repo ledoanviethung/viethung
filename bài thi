@@ -9,15 +9,16 @@ create table marks(
     semester1marks smallint,
     semester2marks smallint,
     enrolled_date date,
-    check (semester1marks >= 0 and semester1marks <= 100),
-    check (semester2marks >= 0 and semester2marks <= 100),
+    check (semester1marks between 0 and 100),
+    check (semester2marks between 0 and 100),
     check (enrolled_date < getdate())
 );
 create table course(
 	code int primary key,
     course_title varchar(30),
-    credit_hour int,
-    check (LENGTH(course_title) > 10)
+    check (LENGTH(course_title) >= 10)
+    credit_hour int
+    
 );
 
 INSERT INTO course VALUES("1","Khoa hoc 1","24");
